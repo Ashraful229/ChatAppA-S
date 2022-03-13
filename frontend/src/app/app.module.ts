@@ -16,6 +16,7 @@ import{MatInputModule} from '@angular/material/input';
 import{FormsModule} from '@angular/forms';
 import{ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
+import { authInterceptorProviders, Tokensetter } from './services/tokensetter';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

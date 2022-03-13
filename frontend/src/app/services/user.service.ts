@@ -5,12 +5,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl="http://localhost:8081/user";
+  baseUrl="http://localhost:8081/jwt";
 
   constructor(private httpClient:HttpClient) { }
 
   //getuser
   getUser(){
-    return this.httpClient.get(this.baseUrl+"/getUser");
+    return this.httpClient.get(this.baseUrl+"/");
   }
 }
