@@ -5,13 +5,12 @@ import com.jwt.jwtexample.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class WelcomeController {
+@CrossOrigin({"*"})
+@RequestMapping("/jwt")
+public class JwtController {
     @Autowired
     private JwtUtil jwtUtil;
 
@@ -25,6 +24,8 @@ public class WelcomeController {
     @PostMapping("/authenticate")
     public String generateToken(@RequestBody AuthReq authReq) throws Exception {
         try {
+            System.out.println("authReq.getUsername()"+authReq.getUserName());
+            System.out.println("authReq.getPassword()"+authReq.getPassword());
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(authReq.getUserName(),authReq.getPassword())
             );

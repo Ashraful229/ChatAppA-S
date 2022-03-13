@@ -1,1 +1,9 @@
-<p>nav-bar works!</p>
+<mat-toolbar color="primary">
+  <span><a mat-icon-button routerLink="/">Caht App</a></span>
+  <span class="spacer"></span>
+  <a *ngIf="!loggedIn" mat-icon-button routerLink="/login">Login</a>
+  <a *ngIf="loggedIn" mat-icon-button >User</a>
+  <a *ngIf="loggedIn"(click)="logOut()" mat-icon-button>Logout</a>
+
+
+</mat-toolbar>
