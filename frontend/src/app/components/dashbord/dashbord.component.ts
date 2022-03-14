@@ -15,8 +15,8 @@ export class DashbordComponent implements OnInit {
 
   getUser()
   {
-    this.userService.getUser().subscribe(data=>{
-      console.log(data);
+    this.userService.getUser().subscribe((data:any)=>{
+      console.log(data.message);
     })
   }
 

@@ -19,7 +19,8 @@ public class JwtController {
     @GetMapping("/")
     public String welcome()
     {
-        return "okokok";
+        System.out.println("welcome");
+        return "{\"message\":\"welcome\"}";
     }
     @PostMapping("/authenticate")
     public String generateToken(@RequestBody AuthReq authReq) throws Exception {
