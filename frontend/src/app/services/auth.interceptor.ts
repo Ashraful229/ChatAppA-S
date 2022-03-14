@@ -15,7 +15,7 @@ import { LoginService } from "./login.service";
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor{
 
-    constructor(private login:LoginService){
+    constructor(private login:LoginService,private router:Router){
 
     }
 
@@ -32,10 +32,7 @@ export class AuthInterceptor implements HttpInterceptor{
             authReq=authReq.clone({
                 setHeaders:{Authorization:`Bearer ${token}`},
             });
-
-            alert(authReq.headers.get('Authorization'));
         }
-
 
         return next.handle(authReq);
     }

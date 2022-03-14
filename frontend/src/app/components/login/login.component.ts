@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
           this.toastr.success('Login Successfully');
 
           window.location.href='/dashbord';
-          //this.router.navigate(['dashbord']);
+          //this.router.navigate(['/dashbord']);
 
         }
         else
